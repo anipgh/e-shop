@@ -1,9 +1,9 @@
-package com.boots.entity;
+package com.eshop.entity;
 
-import javax.persistence.Id;
 import org.springframework.security.core.GrantedAuthority;
-import com.boots.entity.User;
+
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -13,7 +13,7 @@ import java.util.Set;
  * @author Ani Poghosyan on 18/02/2022
  */
 @Entity
-@Table(name = "t_role")
+@Table
 public class Role implements GrantedAuthority {
     @Id
     private Long id;
@@ -21,6 +21,7 @@ public class Role implements GrantedAuthority {
     @Transient
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
+
     public Role() {
     }
 

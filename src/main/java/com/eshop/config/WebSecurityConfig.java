@@ -1,6 +1,6 @@
-package com.boots.config;
+package com.eshop.config;
 
-import com.boots.service.UserService;
+import com.eshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -10,26 +10,30 @@
     <title>Product List</title>
 </head>
 <body>
+<h3>
+    <a href="/create" class="btn btn-primary">Create new product</a>
+</h3>
 <div layout:fragment="content" class="row">
     <div class="col-xs-8 col-md-8">
-        <h3>
-            <a href="/create" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> Product</a>
-        </h3>
         <h2>Product List</h2>
         <div class="table-responsive">
             <table class="table" id="product-table">
                 <thead>
                 <tr>
-                    <th>Product Name</th>
-                    <th>Product Desc</th>
-                    <th>Product Price</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Image URL</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="product : ${products}">
-                    <td><a th:text="${product.prodName}" th:href="@{'/show/' + ${product.id}}"></a></td>
-                    <td th:text="${product.prodDesc}"></td>
-                    <td th:text="${product.prodPrice}"></td>
+                    <td th:text="${product.name}"><a href="/show/' + ${product.id}}">${product.name}</a></td>
+                    <td th:text="${product.description}">${product.description}</td>
+                    <td th:text="${product.price}">${product.price}</td>
+                    <td th:text="${product.category}">${product.category}</td>
+                    <td th:text="${product.imageUrl}">${product.imageUrl}</td>
                 </tr>
                 </tbody>
             </table>

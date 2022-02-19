@@ -13,24 +13,27 @@
             <a href="/product" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Product</a>
         </h3>
         <h2>Edit Product</h2>
-        <form action="/update">
+        <form action="/update" method="post">
             <div class="form-group">
-                <label for="email">Product Name:</label>
-                <input type="text" class="form-control" name="prodName" th:value="${product.prodName}" />
+                <label for="name">Product Name:</label>
+                <input type="text" class="form-control" name="name" value="${product.name}" />
             </div>
             <div class="form-group">
-                <label for="email">Product Description</label>
-                <textarea class="form-control" name="prodDesc" cols="60" rows="3" th:text="${product.prodDesc}"></textarea>
+                <label for="description">Product Description</label>
+                <textarea class="form-control" name="description" cols="60" rows="3">${product.description}</textarea>
             </div>
             <div class="form-group">
-                <label for="email">Product Price</label>
-                <input type="number" class="form-control" name="prodPrice" th:value="${product.prodPrice}" />
+                <label for="price">Product Price</label>
+                <input type="number" class="form-control" name="price" value="${product.price}" />
             </div>
             <div class="form-group">
-                <label for="email">Product Image URL:</label>
-                <input type="url" class="form-control" name="prodImage" th:value="${product.prodImage}" />
+                <label for="imageUrl">Product Image URL:</label>
+                <input type="url" class="form-control" name="imageUrl" value="${product.imageUrl}" />
             </div>
-            <input type="hidden" name="id" th:value="${product.id}" />
+            <div class="form-group">
+                <label for="category">Product Category:</label>
+                <input type="text" class="form-control" name="category" value="${product.category}" />
+            </div><input type="hidden" name="id" value="${product.id}" />
             <button type="submit" class="btn btn-success">Save</button>
         </form>
     </div>

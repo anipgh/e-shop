@@ -12,19 +12,22 @@
         <h3>
             <a href="/product" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> Product</a>
         </h3>
-        <h2 th:text="${product.prodName}"></h2>
-        <h2><img th:src="${product.prodImage}" width="200" /></h2>
+        <h2 th:text="${product.name}"></h2>
+        <h2><img src="${product.imageUrl}" width="200" /></h2>
         <dl class="list">
             <dt>Product Description</dt>
-            <dd th:text="${product.prodDesc}"></dd>
-            <dt>Product Description</dt>
-            <dd th:text="${product.prodPrice}"></dd>
+            <dd >${product.description}</dd>
+            <dt>Product Price</dt>
+            <dd >${product.price}</dd>
+            <dt>Product Category</dt>
+            <dd >${product.category}</dd>
         </dl>
-        <form action="/delete">
-            <input type="hidden" name="id" th:value="${product.id}" />
+        <form action="/delete" method="post">
+            <input type="hidden" name="id" value="${product.id}" />
             <h2><input type="submit" class="btn btn-danger" value="Delete" onclick="return confirm('Are you sure?');" />
-                <a th:href="@{'/edit/' + ${product.id}}" class="btn btn-warning">Edit</a></h2>
+                </h2>
         </form>
+        <a href="/edit/${product.id}" class="btn btn-warning">Edit</a>
     </div>
 </div>
 </body>

@@ -14,13 +14,13 @@
 </sec:authorize>
 <div>
     <form method="POST" action="/login">
-        <h2>Enter to system</h2>
+        <h2>Sign In to system</h2>
         <div>
             <input name="username" type="text" placeholder="Username"
                    autofocus="true"/>
             <input name="password" type="password" placeholder="Password"/>
             <button type="submit">Log In</button>
-            <h4><a href="/registration">Sign in</a></h4>
+            <h4><a href="/registration">Sign Up</a></h4>
         </div>
     </form>
 </div>

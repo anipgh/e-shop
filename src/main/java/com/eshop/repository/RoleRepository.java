@@ -1,6 +1,6 @@
-package com.boots.repository;
+package com.eshop.repository;
 
-import com.boots.entity.Role;
+import com.eshop.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

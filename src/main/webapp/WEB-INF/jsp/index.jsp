@@ -13,8 +13,8 @@
 <div>
     <h3>${pageContext.request.userPrincipal.name}</h3>
     <sec:authorize access="!isAuthenticated()">
-        <h4><a href="/login">Enter</a></h4>
-        <h4><a href="/registration">Sign in</a></h4>
+        <h4><a href="/login">Sign In</a></h4>
+        <h4><a href="/registration">Sign Up</a></h4>
     </sec:authorize>
     <sec:authorize access="isAuthenticated()">
         <h4><a href="/logout">Sign out</a></h4>

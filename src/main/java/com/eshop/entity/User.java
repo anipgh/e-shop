@@ -1,13 +1,13 @@
-package com.boots.entity;
+package com.eshop.entity;
 
-import javax.persistence.Id;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import com.boots.entity.Role;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -19,14 +19,14 @@ import java.util.Set;
  * @author Ani Poghosyan on 18/02/2022
  */
 @Entity
-@Table(name = "t_user")
+@Table
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(min=2, message = "Less than 5 digits")
+    @Size(min = 5, message = "Minimum 5 digits")
     private String username;
-    @Size(min=2, message = "Less than 5 digits")
+    @Size(min = 8, message = "Minimum 8 digits")
     private String password;
     @Transient
     private String passwordConfirm;
@@ -99,7 +99,7 @@ public class User implements UserDetails {
         return roles;
     }
 
-    public void setRoles(Set<com.boots.entity.Role> roles) {
+    public void setRoles(Set<com.eshop.entity.Role> roles) {
         this.roles = roles;
     }
 }

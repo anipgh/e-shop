@@ -1,9 +1,9 @@
-package com.boots.service;
+package com.eshop.service;
 
-import com.boots.entity.Role;
-import com.boots.entity.User;
-import com.boots.repository.RoleRepository;
-import com.boots.repository.UserRepository;
+import com.eshop.entity.Role;
+import com.eshop.entity.User;
+import com.eshop.repository.RoleRepository;
+import com.eshop.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -57,8 +57,10 @@ public class UserService implements UserDetailsService {
         if (userFromDB != null) {
             return false;
         }
-
-        user.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
+        //create users with user role
+        //to enable you need to uncomment
+        /*user.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));*/
+        //only users with admin role will be created
         user.setRoles(Collections.singleton(new Role(2L, "ROLE_ADMIN")));
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);

@@ -13,22 +13,26 @@
             <a href="/product" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Product</a>
         </h3>
         <h2>Create Product</h2>
-        <form action="/save">
+        <form action="/save" method="post">
             <div class="form-group">
-                <label for="email">Product Name:</label>
-                <input type="text" class="form-control" name="prodName" />
+                <label for="name">Product Name:</label>
+                <input type="text" class="form-control" name="name" value="${product.name}"/>
             </div>
             <div class="form-group">
-                <label for="email">Product Description</label>
-                <textarea class="form-control" name="prodDesc" cols="60" rows="3"></textarea>
+                <label for="description">Product Description</label>
+                <textarea class="form-control" name="description" cols="60" rows="3">${product.description}</textarea>
             </div>
             <div class="form-group">
-                <label for="email">Product Price</label>
-                <input type="number" class="form-control" name="prodPrice" />
+                <label for="price">Product Price</label>
+                <input type="number" class="form-control" name="price" value="${product.price}"/>
             </div>
             <div class="form-group">
-                <label for="email">Product Image URL:</label>
-                <input type="url" class="form-control" name="prodImage" />
+                <label for="imageUrl">Product Image URL:</label>
+                <input type="url" class="form-control" name="imageUrl"  value="${product.imageUrl}"/>
+            </div>
+            <div class="form-group">
+                <label for="category">Product Category:</label>
+                <input type="text" class="form-control" name="category"  value="${product.category}"/>
             </div>
             <button type="submit" class="btn btn-success">Save</button>
         </form>
