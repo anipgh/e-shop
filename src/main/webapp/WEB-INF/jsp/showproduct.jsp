@@ -9,9 +9,7 @@
 <body>
 <div layout:fragment="content" class="row">
     <div class="col-xs-8 col-md-8">
-        <h3>
-            <a href="/product" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> Product</a>
-        </h3>
+     
         <h2 th:text="${product.name}"></h2>
         <h2><img src="${product.imageUrl}" width="200" /></h2>
         <dl class="list">
