@@ -9,9 +9,7 @@
 <body>
 <div layout:fragment="content" class="row">
     <div class="col-xs-8 col-md-8">
-        <h3>
-            <a href="/product" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Product</a>
-        </h3>
+       
         <h2>Edit Product</h2>
         <form action="/update" method="post">
             <div class="form-group">
